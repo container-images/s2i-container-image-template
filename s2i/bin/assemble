@@ -1,0 +1,2 @@
+echo "---> Installing application source ..."
+mv /tmp/src/* ./ 2>/dev/null || true

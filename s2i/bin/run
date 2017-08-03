@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+APP_DATA=/opt/app-root/src
+CONTAINER_SCRIPTS_PATH=/usr/share/container-scripts
+
+source ${CONTAINER_SCRIPTS_PATH}/common.sh
+
+
+process_extending_files ${APP_DATA}/pre-init/ ${CONTAINER_SCRIPTS_PATH}/pre-init/
+
+process_extending_files ${APP_DATA}/init/ ${CONTAINER_SCRIPTS_PATH}/init/
+
+exec true
