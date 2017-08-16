@@ -12,6 +12,7 @@ source ${CONTAINER_SCRIPTS_PATH}/common.sh
 
 process_extending_files ${APP_DATA}/pre-init/ ${CONTAINER_SCRIPTS_PATH}/pre-init/
 
-process_extending_files ${APP_DATA}/init/ ${CONTAINER_SCRIPTS_PATH}/init/
+# start service here
+echo "Starting service ..."
 
-exec true
+process_extending_files ${APP_DATA}/init/ ${CONTAINER_SCRIPTS_PATH}/init/
