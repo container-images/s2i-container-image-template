@@ -37,8 +37,14 @@ COPY root /
 # add container files
 COPY files /files
 
-RUN mkdir -p ${HOME}/src
+RUN touch /etc/service.conf && \
+    mkdir -p ${HOME}/src && \
+    useradd -u 1001 -r -g 0 -s /sbin/nologin service && \
+    /usr/libexec/fix-permissions /etc/service.conf ${HOME}/src/ && \
+    usermod -a -G root service
 
 WORKDIR ${HOME}/src
 
 CMD ["/usr/bin/run-service"]
+
+USER 1001

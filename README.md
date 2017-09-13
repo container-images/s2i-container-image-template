@@ -27,7 +27,7 @@ contained shell scripts (`*.sh`) are sourced before `service` is started
 
 ##### `init/`
 
-contained shell scripts (`*.sh`) are sourced when `service` is
+contained shell scripts (`*.sh`) are sourced after `service` is
 started
 
 ----------------------------------------------
